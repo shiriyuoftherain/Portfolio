@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onnett's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="star-field" aria-hidden="true"></div>
+  <div class="media-viewer" id="mediaViewer" aria-hidden="true">
+    <div class="viewer-backdrop" data-close></div>
+    <div class="viewer-panel" role="dialog" aria-modal="true">
+      <div class="viewer-content">
+        <div class="viewer-media" id="viewerMedia"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-content">
+
+    <nav>
+      <a href="#" class="nav-name">Onnett | Roblox Developer</a>
+      <div style="display:inline-flex; gap: 10px; align-items:center;">
+        <a href="https://www.roblox.com/users/555464400/profile" target="_blank" rel="noopener" class="nav-roblox">
+          <span class="roblox-icon" aria-hidden="true">
+            <img src="assets/icons/roblox_logo.png" alt="Roblox" />
+          </span>
+          <span>Roblox Profile</span>
+        </a>
+        <button class="nav-discord" type="button" onclick="navigator.clipboard.writeText('onnett.')">
+          <span class="discord-icon" aria-hidden="true">
+            <img src="assets/icons/discord_logo.png" alt="Discord" />
+          </span>
+          <span>onnett. (Click to copy)</span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <p class="hero-eyebrow">About Me</p>
+      <img class="hero-avatar" src="https://roblox-avatar.renegadeleighty.workers.dev?userId=555464400" alt="Onnett roblox avatar (yo wsg)" />
+      <p class="hero-sub">I've been a developer on Roblox since 2020. Along the way I've learned a lot about the engine and LUAU code, but I've also picked up some skill in other aspects such as UI/UX, building, and modeling.</p>
+    </header>
+
+    <section class="section" style="padding: 0 40px 32px;">
+      <div class="section-header">
+        <p class="section-label">Activity</p>
+        <div class="section-line"></div>
+      </div>
+      <div class="games-row" id="gamesRow"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Works</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn" data-tag="Programming">Programming</button>
+        <button class="filter-btn" data-tag="Modeling">Modeling</button>
+        <button class="filter-btn" data-tag="UI/UX">UI/UX</button>
+        <button class="filter-btn" data-tag="Building">Building</button>
+        <button class="filter-btn" data-tag="Animation">Animation</button>
+        <button class="filter-btn" data-tag="VFX">VFX</button>
+        <button class="filter-btn" data-tag="GFX">GFX</button>
+        <button class="filter-btn" data-tag="Rigging">Rigging</button>
+        <button class="clear-btn" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <div class="card" data-tags="Animation,Programming,UI/UX,GFX,Building,Modeling">
+          <p class="card-title">Unseenia: Menu & Character Creation</p>
+          <div class="card-content">
+            <div class="card-media">
+            <iframe src="https://www.youtube.com/embed/gKYrwfVq3-c" title="Unseenia: Menu & Character Creation" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Early test footage of my upcoming game! This has since been remade and improved a lot, will post an updated version here soon. (Forgot to preload the assets, so they might load slowly here.)</p>
+            <div class="card-tags">
+              <span class="tag">Programming</span>
+              <span class="tag">Animation</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card" data-tags="Animation,Programming,UI/UX">
+          <p class="card-title">Unseenia: Credits Cutscene Prototype</p>
+          <div class="card-content">
+            <div class="card-media">
+            <iframe src="https://www.youtube.com/embed/6VsvF9TDGQU" title="Credits Cutscene Prototype" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Very early draft of a credits cutscene for my upcoming game, utilizing a modular cutscene system that I wrote.</p>
+            <div class="card-tags">
+              <span class="tag">Programming</span>
+              <span class="tag">Animation</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card" data-tags="Modeling">
+          <p class="card-title">Old Clothing & Weapons</p>
+          <div class="card-content">
+            <div class="card-media">
+            <img src="assets/works/models_1.png" alt="Modeling project" />
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Some stuff I created in my early modeling days. (I think it was around 2023)</p>
+            <div class="card-tags">
+              <span class="tag">Modeling</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card" data-tags="GFX">
+          <p class="card-title">Dark Clover: Asta & Yuno</p>
+          <div class="card-content">
+            <div class="card-media">
+            <img src="assets/works/darkcloverlogos.png" alt="Dark Clover Logos" />
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Logos I made in early 2023 for a solo project.</p>
+            <div class="card-tags">
+              <span class="tag">GFX</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card" data-tags="Animation,VFX,Programming,Building,Modeling">
+          <p class="card-title">Fallen Saga</p>
+          <div class="card-content">
+            <div class="card-media">
+            <iframe src="https://www.youtube.com/embed/gGMpzzMXccE" title="YouTube project" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">An early-stage MMORPG project I made solo, many years ago. I then decided to try selling it later on. (Warning: Lower your volume for this one 😭)</p>
+            <div class="card-tags">
+              <span class="tag">Animation</span>
+              <span class="tag">VFX</span>
+              <span class="tag">Programming</span>
+              <span class="tag">Building</span>
+              <span class="tag">Modeling</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card" data-tags="Modeling,Rigging">
+          <p class="card-title">Brainrot Characters</p>
+          <div class="card-content">
+            <div class="card-media">
+            <img src="assets/works/brainrots.png" alt="Brainrot Characters" />
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Some character rigs I made in blender for a side project! These were actually pretty fun to make.</p>
+            <div class="card-tags">
+              <span class="tag">Modeling</span>
+              <span class="tag">Rigging</span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">No works match the selected filters.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
