@@ -13,7 +13,7 @@
   --accent: #D3D7DD;
   --accent-dim: rgba(255, 255, 255, 0.10);
   --shadow: 0 28px 62px rgba(0, 0, 0, 0.30);
-  --radius: 15px;
+  --radius: 20px;
 }
 
 html { scroll-behavior: smooth; }
@@ -250,18 +250,17 @@ a.game-card:hover {
 
 .discord-join-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 7px 14px;
-  background: #4e493c;
-  border: 3px solid rgba(255, 255, 255, 0.10);
+  padding: 0px 20px;
+  background: url('assets/buttons/brown_dc_button.png') center/cover;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
   color: #b1b5bf;
   transition: background 0.2s;
   width: fit-content;
   margin: 14px auto 0;
   border-radius: var(--radius);
 }
-.discord-join-btn:hover { background: #4068a3; }
+.discord-join-btn:hover { background: url('assets/buttons/blue_dc_button.png') center/cover; filter: brightness(1.1); }
 
 .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; align-items: center; }
 
@@ -276,9 +275,9 @@ a.game-card:hover {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-.filter-btn:hover  { border-color: rgba(255, 255, 255, 0.44); background: rgba(255, 255, 255, 0.10); }
+.filter-btn:hover  { border-color: rgba(255, 255, 255, 0.44); background: rgba(153, 131, 107, 0.85); }
 
-.filter-btn.active { border-color: rgba(255, 255, 255, 0.50); background: rgba(255, 255, 255, 0.12); }
+.filter-btn.active { border-color: rgba(255, 255, 255, 0.50); background: rgba(156, 245, 121, 0.555); }
 
 .clear-btn {
   font-family: 'IM Fell English', serif; font-size: 14px; color: var(--muted);
@@ -423,13 +422,35 @@ a.game-card:hover {
 @media (max-width: 900px) { .grid { grid-template-columns: repeat(2,1fr); } }
 
 @media (max-width: 600px) {
-  nav { padding-left: 24px; padding-right: 24px; }
-  .hero, .section { padding-left: 24px; padding-right: 24px; }
-  .grid { grid-template-columns: 1fr; }
-  .games-row { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }
-  .card > .card-content { flex-direction: column; }
-  .card-media { width: 100%; }
-  .viewer-panel { width: 100%; border-radius: 0; }
-  .viewer-content { min-height: calc(100vh - 120px); padding: 16px; }
+  nav { flex-wrap: nowrap; padding-top: 12px; padding-bottom: 12px; }
+  .nav-name { font-size: 18px; }
+  .nav-roblox span:last-child, .nav-discord span:last-child { display: none; }
+  .nav-discord, .nav-roblox { padding: 8px; }
+
+  .hero {
+  margin-top: 60px;
+  padding-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+ }
+
+ .hero > *:not(.hero-avatar) { flex: 1; min-width: 0; }
+
+  .hero-eyebrow { position: relative; z-index: 2; }
+
+  .hero-avatar {
+    position: static;
+    flex-shrink: 0;
+    height: auto;
+    width: 90px;
+    margin: 0;
+    order: 2;
+  }
+
+  .hero-eyebrow, .hero-sub { order: 1; }
+
+  .hero-sub { max-width: 100%; }
 }
+
 @media (prefers-reduced-motion: reduce) { .card, a.game-card { transition: none; } }
